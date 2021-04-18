@@ -1,29 +1,14 @@
 # route-counter
 
-## Project setup
-```
+```bash
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Go to http://localhost:8080
 
-### Run your unit tests
-```
-npm run test:unit
-```
+![demo](./demo.gif)
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## TODO
+- [ ] Unit test
+- [ ] Integration test
