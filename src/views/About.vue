@@ -1,5 +1,20 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <router-link :to="`${home.path}`">Previous ({{ home.name }})</router-link>
 </template>
+
+<script lang="ts">
+import { about, home } from "@/router";
+
+import { defineComponent } from "vue";
+
+const About = defineComponent({
+  data() {
+    return {
+      home,
+      about,
+    };
+  },
+});
+
+export default About;
+</script>

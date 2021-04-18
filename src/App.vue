@@ -1,11 +1,36 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link :to="`${home.path}`">Home</router-link> |
+    <router-link :to="`${about.path}`">About</router-link>
+  </div>
+  <div>{{ $route.name }} Page</div>
+  <div class="home">
+    <img alt="Vue logo" src="./assets/logo.png" />
   </div>
   <router-view />
+  <Counter />
 </template>
 
+<script lang="ts">
+import Counter from "@/components/Counter.vue";
+import { about, home } from "@/router";
+
+import { defineComponent } from "vue";
+
+const App = defineComponent({
+  data() {
+    return {
+      home,
+      about,
+    };
+  },
+  components: {
+    Counter,
+  },
+});
+
+export default App;
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -1,18 +1,21 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <router-link :to="`${about.path}`">Next ({{ about.name }})</router-link>
+  <br />
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { about, home } from "@/router";
 
-@Options({
-  components: {
-    HelloWorld,
+import { defineComponent } from "vue";
+
+const Home = defineComponent({
+  data() {
+    return {
+      home,
+      about,
+    };
   },
-})
-export default class Home extends Vue {}
+});
+
+export default Home;
 </script>
